@@ -1,0 +1,151 @@
+﻿@using EVCBooking.Services;
+@using EVCBooking.Models;
+@using EVCBooking.Models.GroupBooking;
+@{
+    Keywords keywords = ViewBag.keyword;
+    // Route 1
+    string monthOfYear_r1 = ViewBag.monthOfYear_r1;
+    int firstDayOfMonth_r1 = ViewBag.firstDayOfMonth_r1;
+    int daysInMonth_r1 = ViewBag.daysInMonth_r1;
+
+
+    Dictionary<int, EVCBooking.Models.GroupBooking.Result> r1 = ViewBag.data != null ? ViewBag.data[0] : null;
+    Dictionary<int, EVCBooking.Models.GroupBooking.Result> r2 = null;
+    string monthOfYear_r2 = "";
+    int firstDayOfMonth_r2 = 0;
+    int daysInMonth_r2 = 0;
+    if (ViewBag.data.Count > 1)
+    {
+        r2 = ViewBag.data != null ? ViewBag.data[1] : null;
+        monthOfYear_r2 = ViewBag.monthOfYear_r2;
+        firstDayOfMonth_r2 = ViewBag.firstDayOfMonth_r2;
+        daysInMonth_r2 = ViewBag.daysInMonth_r2;
+    }
+
+    // Lấy tổng số ô trong lưới (bao gồm cả ô trống) trong grid day of month
+    // int totalCells = ((firstDayOfMonth + daysInMonth) / 7) * 7;
+    // Route 1
+    int totalCells_r1 = (firstDayOfMonth_r1 + daysInMonth_r1) <= 35 ? 35 : 42;
+    // Route 2
+    int totalCells_r2 = (firstDayOfMonth_r2 + daysInMonth_r2) <= 35 ? 35 : 42;
+
+    int color_r1 = 1000;
+    int color_r2 = 1000;
+
+    
+}
+
+
+<div class="ui grid">
+   
+    <div class="sixteen wide mobile sixteen wide tablet eight wide computer column">
+        <div class="ui card" style="width:100%">
+            <div class="content">
+                <div style="display:flex;justify-content:space-between">
+                    <div>Chuyến đi: [@keywords.DepartureCode] <i class="long arrow alternate right icon" style="visibility: visible;"></i>[@keywords.ArrivalCode]</div>
+                    <div><i class="calendar alternate icon"></i>@monthOfYear_r1</div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-container">
+            <div class="grid-item">CN</div>
+            <div class="grid-item">Thứ 2</div>
+            <div class="grid-item">Thứ 3</div>
+            <div class="grid-item">Thứ 4</div>
+            <div class="grid-item">Thứ 5</div>
+            <div class="grid-item">Thứ 6</div>
+            <div class="grid-item">Thứ 7</div>
+
+            @for (int i = 0; i < firstDayOfMonth_r1; i++)
+            {
+                <div class="grid-item" style="height:50px"></div>
+            }
+            @for (var day = 1; day <= daysInMonth_r1; day++)
+            {
+                if (r1.ContainsKey(day))
+                {
+                    if (keywords.BookType == "ONEWAY")
+                    {
+                        <div class="grid-item date__selected" r1="@r1[day].routes[0].departureDate" data-tooltip="🚀 Click để xem thêm" style="cursor:pointer; font-weight:600;">
+                            <span class="date">@day</span>
+                            <span class="img"><img src="~/images/icon/@r1[day].airline@Html.Name(".png")" width="23px" height="13px" /> @ExtensionHelper.Format_Number(r1[day].price)</span>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="grid-item date__selected" r1="@r1[day].routes[0].departureDate" r2="@r1[day].routes[1].departureDate" data-tooltip="🚀 Click để xem thêm" style="cursor:pointer;font-weight:600;">
+                            <span class="code" style="background:@ExtensionHelper.GenerateColorFromNumber(color_r1)">@r1[day].routes[0].flightCode</span>
+                            <span class="date">@r1[day].routes[0].departureDate.Day</span>
+                            <span class="img"><img src="~/images/icon/@r1[day].airline@Html.Name(".png")" width="23px" height="13px" /> @ExtensionHelper.Format_Number(r1[day].price)</span>
+                        </div>
+                        color_r1 *= 10;
+                    }                                   
+                }
+                else
+                {
+                    <div class="grid-item" style="height:50px">
+                        <span class="date">@day</span>
+                    </div>
+                }
+
+            }
+            @for (var i = firstDayOfMonth_r1 + daysInMonth_r1; i < totalCells_r1; i++)
+            {
+                <div class="grid-item" style="height:50px"></div>
+            }
+        </div>
+    </div>
+
+    @if(ViewBag.data.Count > 1)
+    {
+        <div class="sixteen wide mobile sixteen wide tablet eight wide computer column">
+            <div class="ui card" style="width:100%">
+                <div class="content">
+                    <div style="display:flex;justify-content:space-between">
+                        <div>Chuyến về: [@keywords.ArrivalCode] <i class="long arrow alternate right icon" style="visibility: visible;"></i>[@keywords.DepartureCode]</div>
+                        <div><i class="calendar alternate icon"></i>@monthOfYear_r2</div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid-item">CN</div>
+                <div class="grid-item">Thứ 2</div>
+                <div class="grid-item">Thứ 3</div>
+                <div class="grid-item">Thứ 4</div>
+                <div class="grid-item">Thứ 5</div>
+                <div class="grid-item">Thứ 6</div>
+                <div class="grid-item">Thứ 7</div>
+
+                @for (int i = 0; i < firstDayOfMonth_r2; i++)
+                {
+                    <div class="grid-item" style="height:50px"></div>
+                }
+                @for (var day = 1; day <= daysInMonth_r2; day++)
+                {
+                    if (r2.ContainsKey(day))
+                    {
+
+                        <div class="grid-item date__selected" r1="@r2[day].routes[0].departureDate" r2="@r2[day].routes[1].departureDate" data-tooltip="🚀 Click để xem thêm" style="cursor:pointer;font-weight:600;">
+                            <span class="code" style="background:@ExtensionHelper.GenerateColorFromNumber(color_r2)">@r2[day].routes[1].flightCode</span>
+                            <span class="date">@r2[day].routes[1].departureDate.Day</span>
+                            <span class="img"><img src="~/images/icon/@r2[day].airline@Html.Name(".png")" width="23px" height="13px" /> @ExtensionHelper.Format_Number(r2[day].price)</span>
+                        </div>
+                        color_r2 *= 10;
+                    }
+                    else
+                    {
+                        <div class="grid-item" style="height:50px">
+                            <span class="date">@day</span>
+                        </div>
+                    }
+
+                }
+                @for (var i = firstDayOfMonth_r2 + daysInMonth_r2; i < totalCells_r2; i++)
+                {
+                    <div class="grid-item" style="height:50px"></div>
+                }
+            </div>
+        </div>
+    }
+   
+</div>

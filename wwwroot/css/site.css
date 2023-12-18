@@ -1,0 +1,283 @@
+﻿html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+
+}
+
+body {
+    margin-bottom: 60px;
+    font-family: 'Tahoma', Segoe UI, Geneva, Verdana, sans-serif;
+}
+
+@media (min-width: 768px) {
+    html 
+    {
+        font-size: 16px;
+    }
+    body {
+        font-family: 'Tahoma', Segoe UI, Geneva, Verdana, sans-serif;
+    }
+    
+}
+
+.hearder {
+    width: 96%;
+    height:30px;
+    margin: 0px auto;
+}
+.container {
+    width: 96%;
+    margin: 0px auto;
+}
+
+    .container .num__person {
+        height: auto;
+        width: 280px;
+        padding: 10px;
+        position: absolute;
+        z-index: 99999;
+        background: #E6E6E6;
+        margin-top:5px;
+        display:none;
+    }
+    .container .num__person h5{
+        margin-bottom:5px;
+        border-bottom: 1px solid #808080;
+    }
+    .container .num__person .up__down__person {
+        text-align: right;
+    }
+
+    @media only screen and (max-width: 768px) 
+    {
+    .container #check__follow__month {
+        margin-top: -35px;
+    }
+    .container .content #div__roundtrip,#div__oneway,#div__multitrip {
+        width: auto;
+        margin-bottom:0px;
+    }
+    .ui.table:not(.unstackable) > tbody > tr > td:first-child {
+        font-weight: normal;
+    }
+}
+
+/*Fomantic Custom CSS*/
+.ui.multiple.dropdown > .label {
+    font-size: 0.6rem !important;
+
+}
+.ui.form .field > label {
+    font-weight: normal;
+}
+.ui.feed > .event > .content .summary {
+    font-weight: 600;
+}
+
+.ui.selection.dropdown {
+    padding: 0.6em 3.2em .78571429em 1em;
+}
+.ui.multiple.dropdown > .text {
+    margin: .2em 0 .45238095em .64285714em;
+    line-height: 1.3em;
+}
+
+.ui.accordion .title > .dropdown.icon{
+    margin-left:-6px;
+}
+
+.ui.accordion .accordion .title > .dropdown.icon, .ui.accordion .title > .dropdown.icon{
+    margin-left:-6px;
+}
+
+.ui.accordion:not(.styled) .title ~ .content {
+    padding: .5em 0 0em;
+}
+.ui.radio.checkbox label {
+    padding-left: 1.4em;
+}
+@media only screen and (min-width: 768px) and (max-width: 991.98px) {
+    .ui.ui.ui.container:not(.fluid) {
+        width: 933px;
+       /* margin-left: auto;
+        margin-right: auto;*/
+    }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199.98px) {
+    /*.ui.ui.ui.container:not(.fluid) {
+        width: 993px;
+        margin-left: auto;
+        margin-right: auto;
+    }*/
+}
+@media (min-width: 1200px) {
+   /* .ui.ui.ui.container:not(.fluid) {
+        width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
+    }*/
+}
+
+
+/*Hiệu ứng loading*/
+#loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.loading-spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*Vẽ table ngày trong tháng*/
+/*.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.grid-item {
+    box-sizing: border-box;
+    width: calc(100% / 7);*/ /* 7 cột mỗi dòng */
+    /*border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}*/
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 columns */
+    /* grid-gap: 8px; /* Optional gap between cells */
+}
+
+.grid-item {
+    position: relative;
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    height:50px;
+}
+.grid-item .code {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1000;
+    font-size: 0.6em;
+    line-height: 0.7em;
+    padding: 3px 3px;
+    border: 1px solid;
+    border-radius: 3px;
+    color:#fff;
+}
+
+.grid-item .date {
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    z-index: 1000;
+}
+.grid-item .img {
+    position: absolute;
+    left: 0px;
+    bottom: 0px
+}
+
+.ui .card .content .ip__info__name{
+    padding: 3px 10px;
+   
+}
+    .ui .card .content .ip__info__name input {
+        width: 100%;
+        outline: 0px;
+        text-indent: 5px;
+        line-height: 35px;
+        border: 1px solid rgba(34,36,38,.15);
+        border-radius: 5px;
+    }
+.ui .card .content .ip__info__date .ui .input {
+    width: 100%;
+}
+
+.ui .card .content .number__of_seats{
+    margin-bottom:10px;
+}
+
+.ui .card .content .scroll-table-container {
+    overflow-x: auto;
+}
+
+.ui .card .content .scroll-table-container .scroll-table {
+    min-width: 1000px;
+}
+
+.ui .card .content .scroll-table-container-info {
+    overflow-x: auto;
+}
+
+.ui .card .content .scroll-table-container-info .scroll-table-info {
+    min-width: 500px;
+}
+
+#contact__infor{
+    padding: 0px;
+}
+/* Clear border between adjacent cells */
+.grid-item:not(:nth-child(7n)) {
+    border-right: none;
+}
+
+.grid-item:not(:nth-last-child(-n+7)) {
+    border-bottom: none;
+}
+
+
+
+/*// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+    ...
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) {
+    ...
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) {
+    ...
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    ...
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+    ...
+}*/

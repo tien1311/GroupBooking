@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - EVCBooking</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="~/fomantic/semantic.min.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+
+    <header>
+        <div class="hearder">
+        
+        </div>
+    </header>
+
+    
+    @* /Kiểm tra xem viewdata có dữ liệu keyword từ controller truyền sang không *@   
+    @if (ViewData.ContainsKey("keyword"))
+    {
+        ViewBag.k = ViewBag.keyword;
+    }
+
+    <div class="ui container">
+
+        @using (Html.BeginForm("LoadPartialDataSearch_New", "Home", FormMethod.Post, new { @id = "btn__search__form" }))
+    {
+            <div class="ui card" style="width:100%; margin-bottom:15px;">
+                <div class="content" style="background-image: linear-gradient(to right, #f46b45 0%, #eea849  51%, #f46b45  100%); text-align:center;">
+                    <div class="header" style="font-weight:normal;margin-top:0px;color:#fff;"></div>
+                </div>
+                <div class="content">
+                    <div class="ui grid">
+                        <div class="ui form" style="margin:10px 0px">
+                            <div class="inline fields">
+                                <div class="field" id="div__roundtrip">
+                            <div class="ui radio checkbox">
+                                <input type="radio" name="BookType" value="ROUNDTRIP" id="roundtrip">                                       
+                                <label for="roundtrip">Khứ hồi</label>
+                            </div>
+                        </div>
+                        <div class="field" id="div__oneway">
+                            <div class="ui radio checkbox">
+                                <input type="radio" name="BookType" value="ONEWAY" id="oneway">
+                                <label for="oneway">Một chiều</label>
+                            </div>
+                        </div>
+                        @* <div class="field" id="div__multitrip">
+                            <div class="ui radio checkbox">
+                                <input type="radio" name="BookType" value="MULTITRIP" id="multitrip">
+                                <label for="multitrip">Nhiều chặng</label>
+                            </div>
+                        </div> *@
+                    </div>
+                </div>
+            </div>
+            <div class="ui form">
+                <div class="four fields">
+                    <div class="field">
+                        <label style="font-weight:normal" for="DepartureCode">Nơi đi</label>
+                        <input type="hidden" name="DepartureCode" value="SGN" id="selected_departure_code">
+                        <select class="ui search dropdown" id="dropdown_departure_code" required>
+                            @* <option value="SGN">TP HCM (SGN)</option> *@
+                            @* @foreach (var item in ViewBag.list_airport)
+                            {
+                                if (@item.IataCode == "SGN")
+                                {
+                                    <option value="@item.IataCode" selected>@item.CityName (@item.IataCode)</option>
+                                }
+                                else
+                                {
+                                    <option value="@item.IataCode">@item.CityName (@item.IataCode)</option>
+                                }                                
+                            } *@                    
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label style="font-weight:normal" for="ArrivalCode">Nơi đến</label>
+                        <input type="hidden" name="ArrivalCode" value="HAN" id="selected_arrival_code">
+                            <select class="ui search dropdown" id="dropdown_arrival_code" required>
+                            @* <option value="HAN">Hà Nội (HAN)</option> *@
+                            @* @foreach (var item in ViewBag.list_airport)
+                            {
+                                if (@item.IataCode == "HAN")
+                                {
+                                    <option value="@item.IataCode" selected>@item.CityName (@item.IataCode)</option>
+                                }
+                                else
+                                {
+                                    <option value="@item.IataCode">@item.CityName (@item.IataCode)</option>
+                                }
+                            } *@
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label style="font-weight:normal" for="DepartureDate">Ngày đi</label>
+                        <div class="field">
+                            <div class="ui calendar" id="rangestart">
+                                <div class="ui input left icon">
+                                    <i class="calendar icon"></i>
+                                    <input type="text" placeholder="Ngày đi" name="DepartureDate" id="DepartureDate" autocomplete="off" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label style="font-weight:normal" for="ArrivalDate">Ngày về</label>
+                        <div class="field">
+                            <div class="ui calendar" id="rangeend">
+                                <div class="ui input left icon">
+                                    <i class="calendar icon"></i>
+                                    <input type="text" placeholder="Ngày về" name="ArrivalDate" id="ArrivalDate" autocomplete="off" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>              
+            </div>
+                <div class="ui form">
+                <div class="four fields">
+                    <div class="field">
+                        <label>Hãng hàng không</label>
+                        <input type="hidden" name="Airline" id="selected__airline">
+                        <select name="" multiple="" class="ui clearable multiple selection dropdown" id="dropdown__airline" required>
+                            <option value="">Chọn hãng</option>
+                            <option value="VN">Vietnam Airlines</option>
+                            <option value="VU">Vietravel</option>
+                            <option value="QH">Bamboo Airways</option>
+                            <option value="VJ">Vietjetair</option>
+                        </select>
+                    </div>
+                    <div class="field" style="position:relative">
+                        <label for="person">Hành khách</label>
+                        <input type="text" name="person" id="person">
+                        <div class="num__person">
+                            <h5>Số hành khách</h5>
+                            <div class="up__down__person">
+                                <div class="title__person" style="width:50%; float:left; height:30px; display:flex;align-items:center">Người lớn</div>
+                                <div class="up__down pro-qty" style="width:50%; float:left">
+                                    <button type="button" class="dec adult" style="width:30px; height:30px">-</button>
+                                    <input type="text" value="1" name="adult" id="adult" style="width:60px;height:30px;margin-bottom:5px; text-align:center" />
+                                    <button type="button" class="inc adult" style="width:30px; height:30px">-</button>
+                                </div>  
+                            </div>
+                             <div class="up__down__person">
+                                <div class="title__person" style="width:50%; float:left; height:30px; display:flex;align-items:center">Trẻ em</div>
+                                <div class="up__down pro-qty" style="width:50%; float:left">
+                                    <button type="button" class="dec child" style="width:30px; height:30px">-</button>
+                                    <input type="text" value="0" name="child" id="child" style="width:60px;height:30px;margin-bottom:5px; text-align:center" />
+                                    <button type="button" class="inc child" style="width:30px; height:30px">-</button>
+                                </div>  
+                            </div>
+                            <div class="up__down__person">
+                                <div class="title__person" style="width:50%; float:left; height:30px; display:flex;align-items:center">Em bé</div>
+                                <div class="up__down pro-qty" style="width:50%; float:left">
+                                    <button type="button" class="dec baby" style="width:30px; height:30px">-</button>
+                                    <input type="text" value="0" name="baby" id="baby" style="width:60px;height:30px;margin-bottom:5px; text-align:center" />
+                                    <button type="button" class="inc baby" style="width:30px; height:30px">-</button>
+                                </div>
+                            </div>
+
+                            <div style="clear:both"></div>
+                        </div>
+                    </div>
+                    <div class="field" style="float:left;width:180px" id="check__follow__month">
+                        <div class="ui checkbox">
+                            @* <input type="hidden" name="__ViewOfMonth__" id="__ViewOfMonth__"> *@
+                            <input type="checkbox" name="ViewOfMonth" id="ViewOfMonth">
+                            <label for="ViewOfMonth">Xem theo tháng</label>
+                        </div>
+                    </div>
+                    <div class="field" style="display:flex;align-items:center">
+                        <button type="submit" class="ui orange button" id="btn__search__flight">Tìm kiếm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+
+
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+
+    </div>
+
+    <footer class="border-top footer text-muted">
+        
+    </footer>
+    <!-- Compiled and minified JavaScript -->
+    <script src="~/js/moment.min.js"></script>
+    @* <script src="~/js/moment-timezone.min.js"></script> *@
+    <script src="~/fomantic/semantic.min.js"></script>
+    <script src="~/js/site.js"></script>
+  
+    
+</body>
+</html>

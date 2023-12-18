@@ -1,0 +1,881 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\EVCBooking.bundle.scp.css",
+      "PackagePath": "staticwebassets\\EVCBooking.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\accordion.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\accordion.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\accordion.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\accordion.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\accordion.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\accordion.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\accordion.min.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\accordion.min.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\ad.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\ad.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\ad.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\ad.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\api.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\api.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\api.min.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\api.min.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\breadcrumb.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\breadcrumb.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\breadcrumb.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\breadcrumb.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\button.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\button.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\button.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\button.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\calendar.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\calendar.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\calendar.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\calendar.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\calendar.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\calendar.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\calendar.min.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\calendar.min.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\card.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\card.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\card.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\card.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\checkbox.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\checkbox.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\checkbox.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\checkbox.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\checkbox.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\checkbox.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\checkbox.min.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\checkbox.min.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\comment.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\comment.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\comment.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\comment.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\container.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\container.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\container.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\container.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\dimmer.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\dimmer.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\dimmer.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\dimmer.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\dimmer.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\dimmer.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\dimmer.min.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\dimmer.min.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\divider.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\divider.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\divider.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\divider.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\dropdown.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\dropdown.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\dropdown.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\dropdown.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\dropdown.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\dropdown.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\dropdown.min.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\dropdown.min.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\embed.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\embed.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\embed.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\embed.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\embed.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\embed.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\embed.min.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\embed.min.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\emoji.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\emoji.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\emoji.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\emoji.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\feed.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\feed.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\feed.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\feed.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\flag.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\flag.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\flag.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\flag.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\flyout.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\flyout.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\flyout.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\flyout.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\flyout.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\flyout.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\flyout.min.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\flyout.min.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\form.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\form.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\form.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\form.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\form.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\form.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\form.min.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\form.min.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\grid.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\grid.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\grid.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\grid.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\header.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\header.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\header.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\header.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\icon.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\icon.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\icon.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\icon.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\image.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\image.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\image.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\image.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\input.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\input.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\input.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\input.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\item.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\item.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\item.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\item.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\label.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\label.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\label.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\label.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\list.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\list.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\list.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\list.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\loader.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\loader.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\loader.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\loader.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\menu.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\menu.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\menu.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\menu.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\message.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\message.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\message.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\message.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\modal.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\modal.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\modal.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\modal.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\modal.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\modal.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\modal.min.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\modal.min.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\nag.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\nag.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\nag.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\nag.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\nag.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\nag.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\nag.min.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\nag.min.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\placeholder.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\placeholder.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\placeholder.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\placeholder.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\popup.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\popup.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\popup.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\popup.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\popup.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\popup.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\popup.min.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\popup.min.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\progress.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\progress.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\progress.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\progress.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\progress.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\progress.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\progress.min.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\progress.min.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\rail.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\rail.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\rail.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\rail.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\rating.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\rating.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\rating.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\rating.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\rating.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\rating.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\rating.min.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\rating.min.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\reset.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\reset.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\reset.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\reset.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\reveal.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\reveal.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\reveal.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\reveal.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\search.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\search.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\search.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\search.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\search.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\search.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\search.min.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\search.min.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\segment.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\segment.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\segment.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\segment.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\shape.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\shape.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\shape.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\shape.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\shape.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\shape.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\shape.min.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\shape.min.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\sidebar.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\sidebar.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\sidebar.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\sidebar.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\sidebar.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\sidebar.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\sidebar.min.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\sidebar.min.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\site.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\site.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\site.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\site.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\site.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\site.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\site.min.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\site.min.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\slider.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\slider.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\slider.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\slider.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\slider.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\slider.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\slider.min.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\slider.min.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\state.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\state.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\state.min.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\state.min.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\statistic.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\statistic.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\statistic.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\statistic.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\step.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\step.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\step.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\step.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\sticky.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\sticky.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\sticky.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\sticky.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\sticky.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\sticky.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\sticky.min.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\sticky.min.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\tab.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\tab.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\tab.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\tab.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\tab.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\tab.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\tab.min.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\tab.min.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\table.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\table.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\table.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\table.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\text.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\text.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\text.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\text.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\toast.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\toast.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\toast.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\toast.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\toast.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\toast.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\toast.min.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\toast.min.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\transition.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\transition.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\transition.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\transition.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\transition.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\components\\transition.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\transition.min.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\transition.min.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\visibility.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\visibility.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\components\\visibility.min.js",
+      "PackagePath": "staticwebassets\\fomantic\\components\\visibility.min.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\semantic.css",
+      "PackagePath": "staticwebassets\\fomantic\\semantic.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\semantic.js",
+      "PackagePath": "staticwebassets\\fomantic\\semantic.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\semantic.min.css",
+      "PackagePath": "staticwebassets\\fomantic\\semantic.min.css"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\semantic.min.js",
+      "PackagePath": "staticwebassets\\fomantic\\semantic.min.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\themes\\basic\\assets\\fonts\\icons.woff",
+      "PackagePath": "staticwebassets\\fomantic\\themes\\basic\\assets\\fonts\\icons.woff"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\themes\\basic\\assets\\fonts\\icons.woff2",
+      "PackagePath": "staticwebassets\\fomantic\\themes\\basic\\assets\\fonts\\icons.woff2"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\themes\\default\\assets\\fonts\\Lato-Bold.woff",
+      "PackagePath": "staticwebassets\\fomantic\\themes\\default\\assets\\fonts\\Lato-Bold.woff"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\themes\\default\\assets\\fonts\\Lato-Bold.woff2",
+      "PackagePath": "staticwebassets\\fomantic\\themes\\default\\assets\\fonts\\Lato-Bold.woff2"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\themes\\default\\assets\\fonts\\Lato-BoldItalic.woff",
+      "PackagePath": "staticwebassets\\fomantic\\themes\\default\\assets\\fonts\\Lato-BoldItalic.woff"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\themes\\default\\assets\\fonts\\Lato-BoldItalic.woff2",
+      "PackagePath": "staticwebassets\\fomantic\\themes\\default\\assets\\fonts\\Lato-BoldItalic.woff2"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\themes\\default\\assets\\fonts\\Lato-Italic.woff",
+      "PackagePath": "staticwebassets\\fomantic\\themes\\default\\assets\\fonts\\Lato-Italic.woff"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\themes\\default\\assets\\fonts\\Lato-Italic.woff2",
+      "PackagePath": "staticwebassets\\fomantic\\themes\\default\\assets\\fonts\\Lato-Italic.woff2"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\themes\\default\\assets\\fonts\\Lato-Regular.woff",
+      "PackagePath": "staticwebassets\\fomantic\\themes\\default\\assets\\fonts\\Lato-Regular.woff"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\themes\\default\\assets\\fonts\\Lato-Regular.woff2",
+      "PackagePath": "staticwebassets\\fomantic\\themes\\default\\assets\\fonts\\Lato-Regular.woff2"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\themes\\default\\assets\\fonts\\LatoLatin-Bold.woff",
+      "PackagePath": "staticwebassets\\fomantic\\themes\\default\\assets\\fonts\\LatoLatin-Bold.woff"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\themes\\default\\assets\\fonts\\LatoLatin-Bold.woff2",
+      "PackagePath": "staticwebassets\\fomantic\\themes\\default\\assets\\fonts\\LatoLatin-Bold.woff2"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\themes\\default\\assets\\fonts\\LatoLatin-BoldItalic.woff",
+      "PackagePath": "staticwebassets\\fomantic\\themes\\default\\assets\\fonts\\LatoLatin-BoldItalic.woff"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\themes\\default\\assets\\fonts\\LatoLatin-BoldItalic.woff2",
+      "PackagePath": "staticwebassets\\fomantic\\themes\\default\\assets\\fonts\\LatoLatin-BoldItalic.woff2"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\themes\\default\\assets\\fonts\\LatoLatin-Italic.woff",
+      "PackagePath": "staticwebassets\\fomantic\\themes\\default\\assets\\fonts\\LatoLatin-Italic.woff"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\themes\\default\\assets\\fonts\\LatoLatin-Italic.woff2",
+      "PackagePath": "staticwebassets\\fomantic\\themes\\default\\assets\\fonts\\LatoLatin-Italic.woff2"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\themes\\default\\assets\\fonts\\LatoLatin-Regular.woff",
+      "PackagePath": "staticwebassets\\fomantic\\themes\\default\\assets\\fonts\\LatoLatin-Regular.woff"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\themes\\default\\assets\\fonts\\LatoLatin-Regular.woff2",
+      "PackagePath": "staticwebassets\\fomantic\\themes\\default\\assets\\fonts\\LatoLatin-Regular.woff2"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\themes\\default\\assets\\fonts\\brand-icons.woff",
+      "PackagePath": "staticwebassets\\fomantic\\themes\\default\\assets\\fonts\\brand-icons.woff"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\themes\\default\\assets\\fonts\\brand-icons.woff2",
+      "PackagePath": "staticwebassets\\fomantic\\themes\\default\\assets\\fonts\\brand-icons.woff2"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\themes\\default\\assets\\fonts\\icons.woff",
+      "PackagePath": "staticwebassets\\fomantic\\themes\\default\\assets\\fonts\\icons.woff"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\themes\\default\\assets\\fonts\\icons.woff2",
+      "PackagePath": "staticwebassets\\fomantic\\themes\\default\\assets\\fonts\\icons.woff2"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\themes\\default\\assets\\fonts\\outline-icons.woff",
+      "PackagePath": "staticwebassets\\fomantic\\themes\\default\\assets\\fonts\\outline-icons.woff"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\themes\\default\\assets\\fonts\\outline-icons.woff2",
+      "PackagePath": "staticwebassets\\fomantic\\themes\\default\\assets\\fonts\\outline-icons.woff2"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\themes\\famfamfam\\assets\\images\\flags.png",
+      "PackagePath": "staticwebassets\\fomantic\\themes\\famfamfam\\assets\\images\\flags.png"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\themes\\github\\assets\\fonts\\octicons.woff",
+      "PackagePath": "staticwebassets\\fomantic\\themes\\github\\assets\\fonts\\octicons.woff"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\themes\\github\\assets\\fonts\\octicons.woff2",
+      "PackagePath": "staticwebassets\\fomantic\\themes\\github\\assets\\fonts\\octicons.woff2"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\themes\\material\\assets\\fonts\\icons.woff",
+      "PackagePath": "staticwebassets\\fomantic\\themes\\material\\assets\\fonts\\icons.woff"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\fomantic\\themes\\material\\assets\\fonts\\icons.woff2",
+      "PackagePath": "staticwebassets\\fomantic\\themes\\material\\assets\\fonts\\icons.woff2"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\images\\QH.png",
+      "PackagePath": "staticwebassets\\images\\QH.png"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\images\\VJ.png",
+      "PackagePath": "staticwebassets\\images\\VJ.png"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\images\\VN.png",
+      "PackagePath": "staticwebassets\\images\\VN.png"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\images\\VU.png",
+      "PackagePath": "staticwebassets\\images\\VU.png"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\images\\icon\\QH.png",
+      "PackagePath": "staticwebassets\\images\\icon\\QH.png"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\images\\icon\\VJ.png",
+      "PackagePath": "staticwebassets\\images\\icon\\VJ.png"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\images\\icon\\VN.png",
+      "PackagePath": "staticwebassets\\images\\icon\\VN.png"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\images\\icon\\VU.png",
+      "PackagePath": "staticwebassets\\images\\icon\\VU.png"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\js\\jquery-3.7.1.js",
+      "PackagePath": "staticwebassets\\js\\jquery-3.7.1.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\js\\jquery-3.7.1.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery-3.7.1.min.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\js\\moment-timezone.min.js",
+      "PackagePath": "staticwebassets\\js\\moment-timezone.min.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\js\\moment.min.js",
+      "PackagePath": "staticwebassets\\js\\moment.min.js"
+    },
+    {
+      "Id": "D:\\Desktop\\EVFlights\\EVFlights\\EVCBooking\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.EVCBooking.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.EVCBooking.props",
+      "PackagePath": "build\\EVCBooking.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.EVCBooking.props",
+      "PackagePath": "buildMultiTargeting\\EVCBooking.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.EVCBooking.props",
+      "PackagePath": "buildTransitive\\EVCBooking.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

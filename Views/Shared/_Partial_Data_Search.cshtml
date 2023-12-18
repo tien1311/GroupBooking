@@ -1,0 +1,513 @@
+﻿@using EVCBooking.Models;
+@using EVCBooking.Services;
+@using EVCBooking.Models.Booking;
+@model InfoBooking;
+@{
+    Keywords keyword = ViewBag.keyword;
+
+    //Data tìm chính xác theo keyword
+    List<Result> q1 = ViewBag.data[0];
+    //Data tìm chính theo tháng ngoại trừ ngày hiện tại
+    List<Result> q2 = ViewBag.data[1];
+    int index = 1;
+}
+
+
+
+<div class="ui card" style="width:100%">
+    @if (q1.Count > 0)
+    {
+        <div class="content">
+            @if (keyword.BookType == "ONEWAY")
+            {
+                <div class="header" style="font-size:0.99em;"><i class="list icon" style="visibility: visible;"></i>DANH SÁCH CHUYẾN BAY MỘT CHIỀU [@keyword.DepartureCode<i class="long arrow alternate right icon" style="visibility: visible;"></i>@keyword.ArrivalCode,<i class="calendar alternate icon"></i>@keyword.DepartureDate.ToString("dd/MM/yyyy")]</div>
+            }
+            else
+            {
+                <div class="header" style="font-size:0.99em;"><i class="list icon" style="visibility: visible;"></i>DANH SÁCH CHUYẾN BAY KHỨ HỒI [@keyword.DepartureCode<i class="calendar alternate icon"></i>@keyword.DepartureDate.ToString("dd/MM/yyyy")] <i class="exchange alternate icon" style="visibility: visible;"></i>[@keyword.ArrivalCode<i class="calendar alternate icon"></i>@keyword.ArrivalDate.Value.ToString("dd/MM/yyyy")]</div>
+            }
+
+        </div>
+        <div class="content" style="padding:20px;">
+            <div class="ui small feed">
+                <div class="event">
+                    <div class="content">
+                        <div class="ui grid">
+
+                            @foreach (var item in q1)
+                            {
+                                <div class="sixteen wide mobile eight wide tablet eight wide computer column" style="padding:10px 10px">
+                                    <table class="ui unstackable celled table" style="text-align:center">
+                                        <thead style="text-align:left">
+                                            <tr style="padding-top:0.5em;padding-bottom:0.5em">
+                                                <th colspan="5"><img src="~/images/VU.png" width="60px" height="30px" /> @item.Itinerary</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>@item.Routes[0].FlightNumber</td>
+                                                <td>@item.Routes[0].FlightDate.ToString("dd/MM/yyyy")</td>
+                                                <td>@item.Routes[0].FlightHour</td>
+                                            </tr>
+                                            @if (item.BookType == "ROUNDTRIP")
+                                            {
+                                                <tr>
+                                                    <td>@item.Routes[1].FlightNumber</td>
+                                                    <td>@item.Routes[1].FlightDate.ToString("dd/MM/yyyy")</td>
+                                                    <td>@item.Routes[1].FlightHour</td>
+                                                </tr>
+                                            }
+                                            <tr>
+                                                <td style="color:red;font-weight:600">
+                                                    <del style="font-size:0.8em;color:#717171">@string.Format($"{@item.PriceAgent:#,##0}", @item.PriceAgent)</del><br>
+                                                    @string.Format($"{@item.Price:#,##0}", @item.Price)
+                                                </td>
+                                                <td><button class="ui mini blue button __detail__" id="@Html.Name("detail")@index">Chi tiết</button></td>
+                                                <td><button class="ui mini red button btn__booking__buy" id="@item.Id">Chọn mua</button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+
+                                @* Modal để hiển thị điều kiện *@
+                                <div class="ui modal" id="@Html.Name("__detail"+@index+"__")">
+                                    <div class="header" style="font-size:1.4rem;text-align:center; background-image: linear-gradient(to right, #4568DC 0%, #B06AB3  51%, #4568DC  100%);color:#ffff">THÔNG TIN CHUYẾN BAY</div>
+                                    <div class="content">
+
+
+                                        <table class="ui unstackable celled table">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="5">THÔNG TIN CHI TIẾT GIÁ VÉ</th>
+                                                </tr>
+                                                <tr>
+                                                    <th>Ghế</th>
+                                                    <th>Giá vé</th>
+                                                    <th>Thuế & phí</th>
+                                                    <th>Giảm giá</th>
+                                                    <th>Tổng giá</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Người lớn</td>
+                                                    <td>@string.Format($"{@item.Price:#,##0}", @item.Price)</td>
+                                                    <td>@string.Format($"{@item.Charge+@item.Fare:#,##0}", @item.Charge+@item.Fare)</td>
+                                                    <td>0</td>
+                                                    <td>@string.Format($"{@item.Total:#,##0}", @item.Total)</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+
+                                        @* Một chiều *@
+                                        <table class="ui unstackable celled table">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="3">Chuyến bay từ SGN đến HAN (Thời gian bay 02h10m)</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <span>Từ: SGN</span><br>
+                                                        15:00 / 06-11-2023
+                                                    </td>
+                                                    <td>
+                                                        <span>Tới: HAN</span><br>
+                                                        15:00 / 06-11-2023
+                                                    </td>
+                                                    <td>
+                                                        <span>Mã chuyến bay: VN250</span><br>
+                                                        Loại máy bay: 321
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        @if (item.BookType == "ROUNDTRIP")
+                                        {
+                                            @* Khứ hồi *@
+                                            <table class="ui unstackable celled table">
+                                                <thead>
+                                                    <tr>
+                                                        <th colspan="3">Chuyến bay từ HAN đến SGN (Thời gian bay 02h10m)</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <span>Từ: SGN</span><br>
+                                                            15:00 / 06-11-2023
+                                                        </td>
+                                                        <td>
+                                                            <span>Tới: HAN</span><br>
+                                                            15:00 / 06-11-2023
+                                                        </td>
+                                                        <td>
+                                                            <span>Mã chuyến bay: VN250</span><br>
+                                                            Loại máy bay: 321
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        }
+
+
+                                        @* Điều kiện riêng *@
+                                        <div class="ui card" style="width:100%">
+                                            <div class="content" style="background:#F9FAFB">
+                                                <div class="header">Điều kiện riêng</div>
+                                            </div>
+                                            <div class="content">
+                                                <div class="ui small feed">
+                                                    <div class="event">
+                                                        <div class="content">
+                                                            <div class="summary">
+                                                                <span>Giảm giá cho đoàn 10 khách</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        @* Điều kiện chung *@
+                                        <div class="ui card" style="width:100%">
+                                            <div class="content" style="background:#F9FAFB">
+                                                <div class="header">Điều kiện chung</div>
+                                            </div>
+                                            <div class="content">
+                                                <div class="ui small feed">
+                                                    <div class="event">
+                                                        <div class="content">
+                                                            <div class="summary">
+                                                                <span>Đang cập nhật...</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="top actions">
+                                        <div class="ui negative button">Đóng</div>
+                                    </div>
+                                </div>
+                                index++;
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    }
+    else
+    {
+        <div class="ui card" style="width:100%">
+            <div class="content">
+                <div class="content">
+                    @if (keyword.BookType == "ONEWAY")
+                    {
+                        <div class="header" style="font-size:0.99em"><i class="list icon" style="visibility: visible;"></i>DANH SÁCH CHUYẾN BAY MỘT CHIỀU [@keyword.DepartureCode <i class="long arrow alternate right icon" style="visibility: visible;"></i>@keyword.ArrivalCode]<i class="calendar alternate icon"></i>@keyword.DepartureDate.ToString("dd/MM/yyyy")</div>
+                    }
+                    else
+                    {
+                        <div class="header" style="font-size:0.99em"><i class="list icon" style="visibility: visible;"></i>DANH SÁCH CHUYẾN BAY KHỨ HỒI [@keyword.DepartureCode<i class="calendar alternate icon"></i>@keyword.DepartureDate.ToString("dd/MM/yyyy")] <i class="exchange alternate icon" style="visibility: visible;"></i>[@keyword.ArrivalCode<i class="calendar alternate icon"></i>@keyword.ArrivalDate.Value.ToString("dd/MM/yyyy")]</div>
+                    }
+
+                </div>
+            </div>
+            <div class="content">
+                <div class="ui small feed">
+                    <div class="event">
+                        <div class="ui center aligned message" style="width:100%">
+                            <div class="content" style="text-align:left">
+                                <div class="header">
+                                    Dữ liệu chuyến bay không được tìm thấy.
+                                </div>
+                                <p>Vui lòng chọn hành trình khác...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    }
+
+    @if (q2.Count > 0)
+    {
+        <div class="content">
+            @if (keyword.BookType == "ONEWAY")
+            {
+                <div class="header" style="font-size:0.99em"><i class="list icon" style="visibility: visible;"></i>DANH SÁCH CHUYẾN BAY MỘT CHIỀU [@keyword.DepartureCode<i class="long arrow alternate right icon" style="visibility: visible;"></i>@keyword.ArrivalCode,<i class="calendar alternate icon"></i>@keyword.DepartureDate.ToString("MM/yyyy")]</div>
+            }
+            else
+            {
+                <div class="header" style="font-size:0.99em;"><i class="list icon" style="visibility: visible;"></i>DANH SÁCH CHUYẾN BAY KHỨ HỒI [@keyword.DepartureCode<i class="calendar alternate icon"></i>@keyword.DepartureDate.ToString("MM/yyyy")] <i class="exchange alternate icon" style="visibility: visible;"></i>[@keyword.ArrivalCode<i class="calendar alternate icon"></i>@keyword.ArrivalDate.Value.ToString("MM/yyyy")]</div>
+            }
+
+        </div>
+        <div class="content" style="padding:20px;">
+            <div class="ui small feed">
+                <div class="event">
+                    <div class="content">
+                        <div class="ui grid">
+
+                            @foreach (var item in q2)
+                            {
+                                <div class="sixteen wide mobile eight wide tablet eight wide computer column" style="padding:10px 10px">
+                                    <table class="ui unstackable celled table" style="text-align:center">
+                                        <thead style="text-align:left">
+                                            <tr style="padding-top:0.5em;padding-bottom:0.5em">
+                                                <th colspan="5"><img src="~/images/VU.png" width="60px" height="30px" /> @item.Itinerary</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>@item.Routes[0].FlightNumber</td>
+                                                <td>@item.Routes[0].FlightDate.ToString("dd/MM/yyyy")</td>
+                                                <td>@item.Routes[0].FlightHour</td>
+                                            </tr>
+                                            @if (item.BookType == "ROUNDTRIP")
+                                            {
+                                                <tr>
+                                                    <td>@item.Routes[1].FlightNumber</td>
+                                                    <td>@item.Routes[1].FlightDate.ToString("dd/MM/yyyy")</td>
+                                                    <td>@item.Routes[1].FlightHour</td>
+                                                </tr>
+                                            }
+                                            <tr>
+                                                <td style="color:red;font-weight:600">
+                                                    <del style="font-size:0.8em;color:#717171">@string.Format($"{@item.PriceAgent:#,##0}", @item.PriceAgent)</del><br>
+                                                    @string.Format($"{@item.Price:#,##0}", @item.Price)
+                                                </td>
+                                                <td><button class="ui mini blue button __detail__" id="@Html.Name("detail")@index">Chi tiết</button></td>
+                                                <td><button class="ui mini red button btn__booking__buy" id="@item.Id">Chọn mua</button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+
+                                @* Modal để hiển thị điều kiện *@
+                                <div class="ui modal" id="@Html.Name("__detail"+@index+"__")">
+                                    <div class="header" style="font-size:1.4rem;text-align:center; background-image: linear-gradient(to right, #4568DC 0%, #B06AB3  51%, #4568DC  100%);color:#ffff">THÔNG TIN CHUYẾN BAY</div>
+                                    <div class="content">
+
+
+                                        <table class="ui unstackable celled table">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="5">THÔNG TIN CHI TIẾT GIÁ VÉ</th>
+                                                </tr>
+                                                <tr>
+                                                    <th>Ghế</th>
+                                                    <th>Giá vé</th>
+                                                    <th>Thuế & phí</th>
+                                                    <th>Giảm giá</th>
+                                                    <th>Tổng giá</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Người lớn</td>
+                                                    <td>@string.Format($"{@item.Price:#,##0}", @item.Price)</td>
+                                                    <td>@string.Format($"{@item.Charge+@item.Fare:#,##0}", @item.Charge+@item.Fare)</td>
+                                                    <td>0</td>
+                                                    <td>@string.Format($"{@item.Total:#,##0}", @item.Total)</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+
+                                        @* Một chiều *@
+                                        <table class="ui unstackable celled table">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="3">Chuyến bay từ SGN đến HAN (Thời gian bay 02h10m)</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <span>From: SGN</span><br>
+                                                        15:00 / 06-11-2023
+                                                    </td>
+                                                    <td>
+                                                        <span>To: HAN</span><br>
+                                                        15:00 / 06-11-2023
+                                                    </td>
+                                                    <td>
+                                                        <span>Mã chuyến: VN250</span><br>
+                                                        Loại: A321
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        @if (item.BookType == "ROUNDTRIP")
+                                        {
+                                            @* Khứ hồi *@
+                                            <table class="ui unstackable celled table">
+                                                <thead>
+                                                    <tr>
+                                                        <th colspan="3">Chuyến bay từ HAN đến SGN (Thời gian bay 02h10m)</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <span>From: SGN</span><br>
+                                                            15:00 / 06-11-2023
+                                                        </td>
+                                                        <td>
+                                                            <span>To: HAN</span><br>
+                                                            15:00 / 06-11-2023
+                                                        </td>
+                                                        <td>
+                                                            <span>Mã chuyến: VN250</span><br>
+                                                            Loại: 321
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        }
+
+
+                                        @* Điều kiện riêng *@
+                                        <div class="ui card" style="width:100%">
+                                            <div class="content" style="background:#F9FAFB">
+                                                <div class="header">Điều kiện riêng</div>
+                                            </div>
+                                            <div class="content">
+                                                <div class="ui small feed">
+                                                    <div class="event">
+                                                        <div class="content">
+                                                            <div class="summary">
+                                                                <span>Giảm giá cho đoàn 10 khách</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        @* Điều kiện chung *@
+                                        <div class="ui card" style="width:100%">
+                                            <div class="content" style="background:#F9FAFB">
+                                                <div class="header">Điều kiện chung</div>
+                                            </div>
+                                            <div class="content">
+                                                <div class="ui small feed">
+                                                    <div class="event">
+                                                        <div class="content">
+                                                            <div class="summary">
+                                                                <span>Đang cập nhật...</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="top actions">
+                                        <div class="ui negative button">Đóng</div>
+                                    </div>
+                                </div>
+                                index++;
+                            }
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    }
+    else
+    {
+        <div class="ui card" style="width:100%">
+            <div class="content">
+                <div class="content">
+                    @if (keyword.BookType == "ONEWAY")
+                    {
+                        <div class="header" style="font-size:0.99em;"><i class="list icon" style="visibility: visible;"></i>DANH SÁCH CHUYẾN BAY MỘT CHIỀU [@keyword.DepartureCode<i class="long arrow alternate right icon" style="visibility: visible;"></i>@keyword.ArrivalCode,<i class="calendar alternate icon"></i>@keyword.DepartureDate.ToString("MM/yyyy")]</div>
+                    }
+                    else
+                    {
+                        <div class="header" style="font-size:0.99em;"><i class="list icon" style="visibility: visible;"></i>DANH SÁCH CHUYẾN BAY KHỨ HỒI [@keyword.DepartureCode<i class="calendar alternate icon"></i>@keyword.DepartureDate.ToString("MM/yyyy")] <i class="exchange alternate icon" style="visibility: visible;"></i>[@keyword.ArrivalCode<i class="calendar alternate icon"></i>@keyword.ArrivalDate.Value.ToString("MM/yyyy")]</div>
+                    }
+
+                </div>
+            </div>
+            <div class="content">
+                <div class="ui small feed">
+                    <div class="event">
+                        <div class="ui center aligned message" style="width:100%">
+                            <div class="content" style="text-align:left">
+                                <div class="header">
+                                    Dữ liệu chuyến bay không được tìm thấy.
+                                </div>
+                                <p>Vui lòng chọn hành trình khác...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    }
+</div>
+
+
+
+<div class="ui mini modal" id="booking__modal">
+    @using (Html.BeginForm("CreateBooking", "Home", FormMethod.Post, new { @class = "ui form segment", @id = "form__booking" }))
+    {
+        <div class="ui card" style="width:100%">
+            <div class="content">
+                <div class="header">THÔNG TIN ĐẶT VÉ</div>
+            </div>
+            <div class="content">
+                <input type="text" name="Id" value="" id="send_id_booking" hidden/>
+                <input type="text" name="BookType" value="@keyword.BookType" hidden/>
+                <input type="text" name="Number_Person" value="@keyword.NumberOfPassengers" hidden/>
+                <div class="field">
+                    @Html.TextBoxFor(b => Model.Passengers[0].FirstName, new{@required="required", @placeholder="Họ & tên đệm"})
+                </div>
+                <div class="field">
+                    @Html.TextBoxFor(b => Model.Passengers[0].LastName, new{@required="required", @placeholder="Tên"})
+                </div>
+                <div class="field">
+                    @Html.TextBoxFor(b => Model.Phone, new{@required="required",@placeholder="Số điện thoại"})
+                </div>
+                <div class="field">
+                    @Html.TextBoxFor(b => Model.Email, new{@required="required",@placeholder="Email",@type="email"})
+                </div>
+                <div class="right actions" style="text-align:right;">
+                    <div class="ui mini negative button">Hủy</div>
+                    <button type="submit" class="ui mini green button">Đặt vé</button>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<div class="ui mini modal" id="msg__booking_modal">
+    <div class="header">Thông báo</div>
+    <div class="scrolling content" id="body__booking__modal">
+        ...
+    </div>
+</div>

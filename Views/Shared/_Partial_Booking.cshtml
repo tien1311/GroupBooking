@@ -1,0 +1,194 @@
+﻿@using EVCBooking.Models.Booking;
+@model InfoBooking;
+@{
+    Keywords keyword = ViewBag.keyword;
+    List<EVCBooking.Models.GroupBooking.Result> flights = ViewBag.filghts;
+    var index = 1;
+}
+
+@using (Html.BeginForm("CreateBooking", "Home", FormMethod.Post, new {@id = "form__booking" }))
+{
+<div class="ui card" style="width:100%">
+    <div class="content">
+        <div class="header">Thông tin chuyến bay</div>
+    </div>
+    <div class="content">
+        <div class="scroll-table-container">
+            <table class="ui unstackable celled table scroll-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Hãng</th>
+                        <th>Nơi đi</th>
+                        <th>Nơi đến</th>
+                        <th>Chuyến bay</th>
+                        <th>Khởi hành</th>
+                        <th>Giờ</th>
+                        <th>Tổng giá</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in flights)
+                    {
+                        <tr>
+                            <td>@index</td>
+                            <td>@item.airline</td>
+                            <td>@item.departure</td>
+                            <td>@item.arrival</td>
+                            <td>@item.routes[0].flightCode</td>
+                            <td>@item.routes[0].departureDate.ToString("dd-MM-yyyy")</td>
+                            <td>@item.routes[0].departureHour</td>
+                            <td rowspan="2">@string.Format($"{@item.price:#,##0}", @item.price)</td>
+                        </tr>
+                        @if (item.typeOfTrip == "ROUNDTRIP")
+                        {
+                            <tr>
+                                <td>@index</td>
+                                <td>@item.airline</td>
+                                <td>@item.arrival</td>
+                                <td>@item.departure</td>                           
+                                <td>@item.routes[1].flightCode</td>
+                                <td>@item.routes[1].departureDate.ToString("dd-MM-yyyy")</td>
+                                <td>@item.routes[1].departureHour</td>
+                                
+                            </tr>
+                        }
+                    index++;
+                    }                 
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="content">
+            <div class="header">Thông tin hành khách <span style="color:red;font-size:0.6em">(không bắt buộc)</span></div>
+    </div>
+    <div class="content">
+            <table class="ui celled table" id="passengersInfo" style="text-align:center">
+            <thead>
+                <tr>
+                    <th>Họ và tên</th>
+                    <th>Tiêu đề</th>
+                    <th>Ngày sinh</th>
+                    <th>Xóa</th>
+                </tr>
+            </thead>
+            <tbody id="passengersBody">
+                @for (int i = 0; i < keyword.NumberOfPassengers; i++)
+                {
+                    int idx = i + 1;
+                <tr>
+                    <td class="ip__info__name">
+                        <input type="text" name="@Html.Name("fullname")@idx" class="first__name__booking">
+                    </td>
+                    <td class="ip__info__title">
+                        <input type="text" name="@Html.Name("title")@idx" id="@Html.Name("selected__passengers__title")@idx" value="MR" hidden>
+                        <select class="ui fluid dropdown" id="@Html.Name("dropdown__passengers__title")@idx" data="@Html.Name("selected__passengers__title")@idx">
+                            <option value="MR">MR (Quý Ông)</option>
+                            <option value="MRS">MRS (Quý Bà)</option>
+                            <option value="MS">MS (Quý Cô)</option>
+                            <option value="MISS">MISS (Bé Gái)</option>
+                            <option value="MSTR">MSTR (Bé Trai)</option>
+                        </select>
+                    </td>
+                    <td class="ip__info__date">
+                        <div class="ui calendar rangeBirthday" id="@Html.Name("rangeBirthday")@idx">
+                            <div class="ui input left icon">
+                                <i class="calendar icon"></i>
+                                <input type="text" name="@Html.Name("dateOfBirth")@idx" class="rangeBirthday">
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <button type="button" class="mini ui icon button btn__delete__row">
+                            <i class="trash alternate icon"></i>
+                        </button>
+                    </td>                     
+                </tr>     
+                }
+            </tbody>
+        </table>
+        <div class="number__of_seats" style="text-align:right">
+            <button type="button" class="mini ui icon button btn__add__row">
+                <i class="plus icon"></i> Thêm mới
+            </button>
+        </div>
+    </div>
+
+
+    <div class="content">
+        <div class="ui two column grid" style="padding:6px 6px;">
+        <div class="sixteen wide mobile ten wide tablet eleven wide computer column" style="padding:10px 10px;">
+
+        <div class="ui card" style="width:100%">
+            <div class="content">
+                <div class="header">Chi phí phải trả</div>
+            </div>
+            <div class="content">
+                <div class="scroll-table-container-info">
+                    <table class="ui unstackable celled table scroll-table-info">
+                        <thead>
+                            <tr>
+                                <th>Số lượng</th>
+                                <th>Giá vé</th>
+                                <th>Giảm giá</th>
+                                <th>Thuế & phí</th>
+                                <th>Thành tiền</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="numberOfGuests">@flights[0].numberOfGuests</td>
+                                <td id="priceOfTrip">@string.Format($"{@flights[0].price:#,##0}", @flights[0].price)</td>
+                                <td id="priceAgent" data="@string.Format($"{@flights[0].priceAgent:#,##0}", @flights[0].priceAgent)">0</td>
+                                <td>0</td>
+                                <td id="priceTotal">@string.Format($"{@flights[0].total:#,##0}", @flights[0].total)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+       
+            
+        </div>
+        <div class="sixteen wide mobile six wide tablet five wide computer column" style="padding:10px 10px;">
+
+            <div class="ui form segment" id="contact__infor">
+                <div class="ui card" style="width:100%; margin-bottom:0px;">
+                    <div class="content">
+                        <div class="header">Thông tin đặt vé</div>
+                    </div>
+                    <div class="content">
+                        <div class="field">
+                            @Html.TextBoxFor(b => Model.Remark, new{@required="required", @placeholder="Tên cá nhân/Tổ chức"})
+                        </div>
+                        <div class="field">
+                            @Html.TextBoxFor(b => Model.Phone, new{@required="required",@placeholder="Số điện thoại"})
+                        </div>
+                        <div class="field">
+                            @Html.TextBoxFor(b => Model.Email, new{@required="required",@placeholder="Email",@type="email"})
+                        </div>
+                        <div class="right actions" style="text-align:right;">
+                            <div class="ui mini negative button">Hủy</div>
+                            <button type="submit" class="ui mini green button">Đặt vé</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          
+        </div>
+        </div>
+
+    </div>  
+
+</div>
+}
+
+<div class="ui mini modal" id="msg__booking_modal">
+    <div class="header">Thông báo</div>
+    <div class="scrolling content" id="body__booking__modal">
+        ...
+    </div>
+</div>
+

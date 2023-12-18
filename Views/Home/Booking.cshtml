@@ -1,0 +1,195 @@
+﻿@using EVCBooking.Models.Booking;
+@model InfoBooking;
+@{
+    ViewData["Title"] = "Booking";
+    Layout = "_Layout";
+    var id = ViewBag.Id;
+    var num_person = ViewBag.num_person;
+    var bookType = ViewBag.bookType;
+}
+
+@ViewBag.type
+
+<div class="ui two column centered grid">
+    <div class="sixteen wide mobile fourteen wide tablet ten wide computer column">
+        <div class="ui card" style="width:100%">
+            <div class="content">
+                <div class="header">THÔNG TIN ĐẶT VÉ</div>
+            </div>
+            <div class="content">
+                @using (Html.BeginForm("SaveBooking", "Home", FormMethod.Post, new { @class = "ui form segment", @* @id = "form__booking" *@ }))
+                {
+                    <input type="text" name="Id" value="@id" hidden/>
+                    <input type="text" name="BookType" value="@bookType" hidden/>
+                    <input type="text" name="Number_Person" value="@num_person" hidden/>
+                    @* <form class="ui form segment" id="form__booking"> *@
+                    <div class="field">
+                        <label>Tên tổ chức/Cá nhân</label>
+                        @* <input placeholder="Tên công ty" name="company" type="text" required> *@
+                        @Html.TextBoxFor(b => b.Remark, new{@required="required"})
+                    </div>
+                    <div class="two fields">
+                        <div class="field">
+                            <label>Điện thoại</label>
+                            @* <input placeholder="Điện thoại" name="phone" type="text" required> *@
+                            @Html.TextBoxFor(b => b.Phone, new{})
+                        </div>
+                        <div class="field">
+                            <label>Email</label>
+                            @* <input placeholder="Địa chỉ email" name="email" type="email" required> *@
+                            @Html.TextBoxFor(b => b.Email)
+                        </div>
+                       @*  <div class="field">
+                            <label>Điện thoại công ty</label>
+                            <input placeholder="Điện thoại công ty" name="phone_remark" type="text" required>
+                            @Html.TextBoxFor(b => Model.PhoneRemark, new{})
+                        </div> *@
+                    </div>                  
+
+                    @* @for (int i = 0; i < num_person; i++)
+                    {
+                        <div class="ui accordion field accordion__person">
+                            <div class="title">
+                                <i class="icon dropdown"></i>
+                                HÀNH KHÁCH @(i+1)
+                            </div>
+                            <div class="content field">
+                                <div class="two fields">
+                                    <div class="field">
+                                        <label>Đối tượng</label>                      
+                                        @Html.TextBoxFor(b => b.Passengers[i].Type, new {@hidden="hidden", @required="required",@id="selected__passengers__type"})
+                                        <select class="ui dropdown" name="dropdown" id="dropdown__passengers__type">
+                                            <option value="">Chọn</option>
+                                            <option value="ADT">Người lớn</option>
+                                            <option value="CHD">Trẻ em</option>
+                                            <option value="INF">Em bé</option>
+                                        </select>
+                                    </div>
+                                    <div class="field">
+                                        <div class="field">
+                                            <label>Danh xưng</label>
+                                            @Html.TextBoxFor(b => b.Passengers[i].Title, new{@hidden="hidden",@required="required", @id="selected__passengers__title"})
+                                            <select class="ui dropdown" name="dropdown" id="dropdown__passengers__title">
+                                                <option value="">Chọn</option>
+                                                <option value="MR">Ông</option>
+                                                <option value="MRS">Bà</option>
+                                                <option value="MS">Cô/chị</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="two fields">
+                                    <div class="field">
+                                        <label>Họ & tên lót</label>
+                                        @Html.TextBoxFor(b => b.Passengers[i].FirstName, new{@required="required"})
+                                    </div>
+                                    <div class="field">
+                                        <label>Tên</label>
+                                        @Html.TextBoxFor(b => b.Passengers[i].LastName, new{@required="required"})
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label>Ngày sinh</label>
+                                    <div class="ui calendar date__shared">                       
+                                        <div class="ui input left icon">
+                                            <i class="calendar icon"></i>
+                                            @Html.TextBoxFor(b => b.Passengers[i].DateOfBirth, new{@required="required",@id="seelected__dateofbirth",@placeholder="Ngày sinh"})
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ui fluid form">
+                                    <div class="ui accordion field">
+                                        <div class="title">
+                                            <i class="icon dropdown"></i>
+                                            Giấy tờ tùy thân
+                                        </div>
+                                        <div class="content field">
+                                            <div class="two fields">
+                                                <div class="field">
+                                                    <label>Loại giấy tờ</label>
+                                                    @Html.TextBoxFor(b => b.Passengers[i].Documents[i].DocumentType, new{@hidden="hidden",@required="required", @id="selected__document__type"})
+                                                    <select class="ui dropdown" name="dropdown" id="dropdown__document__type">
+                                                        <option value="">Chọn</option>
+                                                        <option value="MR">PASSPORT</option>
+                                                        <option value="MRS">CCCD</option>
+                                                    </select>
+                                                </div>
+                                                <div class="field">
+                                                    <label>Nơi sinh</label>
+                                                    @Html.TextBoxFor(b => b.Passengers[i].Documents[i].BirthPlace, new{@required="required"})
+                                                </div>
+                                            </div>
+                                            <div class="two fields">
+                                                <div class="field">
+                                                    <label>Nơi cấp</label>
+                                                    @Html.TextBoxFor(b => b.Passengers[i].Documents[i].IssuanceLocation, new{@required="required"})
+                                                </div>
+                                                <div class="field">
+                                                    <label>Ngày cấp</label>
+                                                    <div class="ui calendar date__shared">
+                                                        <div class="ui input left icon">
+                                                            <i class="calendar icon"></i>
+                                                            @Html.TextBoxFor(b => b.Passengers[i].Documents[i].IssuanceDate, new{@required="required",@id="seelected__issuancedate",@placeholder="Ngày cấp"})
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="two fields">
+                                                <div class="field">
+                                                    <label>Số định danh</label>
+                                                    @Html.TextBoxFor(b => b.Passengers[i].Documents[i].Number, new{@required="required"})
+                                                </div>
+                                                <div class="field">
+                                                    <label>Ngày hết hạn</label>
+                                                    <div class="ui calendar date__shared">
+                                                        <div class="ui input left icon">
+                                                            <i class="calendar icon"></i>
+                                                            @Html.TextBoxFor(b => b.Passengers[i].Documents[i].ExpiryDate, new{@required="required",@id="seelected__expirydate",@placeholder="Ngày hết hạn"})
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="two fields">
+                                                <div class="field">
+                                                    <label>Nước phát hành</label>
+                                                    @Html.TextBoxFor(b => b.Passengers[i].Documents[i].IssuanceCountry, new{@required="required"})
+                                                </div>
+                                                <div class="field">
+                                                    <label>Quốc gia</label>
+                                                    @Html.TextBoxFor(b => b.Passengers[i].Documents[i].ValidityCountry, new{@required="required"})
+                                                </div>
+                                            </div>
+                                            <div class="two fields">
+                                                <div class="field">
+                                                    <label>Quốc tịch</label>
+                                                    @Html.TextBoxFor(b => b.Passengers[i].Documents[i].Nationality, new{@required="required"})
+                                                </div>
+                                                <div class="field">
+                                                    <label>Holder</label>
+                                                    @Html.TextBoxFor(b => b.Passengers[i].Documents[i].Holder, new{@hidden="hidden",@id="selected__holder",@required="required"})
+                                                    <select class="ui dropdown" name="dropdown" id="dropdown__holder">
+                                                        <option value="">Chọn</option>
+                                                        <option value="true">1</option>
+                                                        <option value="false">0</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    } *@
+                  
+
+                    <div class="ui submit button">
+                        Đặt vé
+                    </div>
+                   
+                    <div class="ui error message"></div>
+                @* </form> *@
+                }    
+            </div>
+        </div>
+    </div>
+</div>
